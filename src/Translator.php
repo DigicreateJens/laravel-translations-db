@@ -120,6 +120,7 @@ class Translator extends \Illuminate\Translation\Translator implements Translato
      * @throws InvalidArgumentException If the locale contains invalid characters
      */
 	public function trans($id, array $parameters = array(), $domain = NULL, $locale = NULL) {
+		return parent::trans($id, $parameters, $locale);
 		// return $this->get($id);
 	}
 
@@ -136,7 +137,9 @@ class Translator extends \Illuminate\Translation\Translator implements Translato
      *
      * @throws InvalidArgumentException If the locale contains invalid characters
      */
-	public function transChoice($id, $number, array $parameters = array(), $domain = NULL, $locale = NULL) {}
+	public function transChoice($id, $number, array $parameters = array(), $domain = NULL, $locale = NULL) {
+		return parent::transChoice($id, $number, $parameters, $locale);
+	}
 
 	public function parseLocale($locale)
 	{
